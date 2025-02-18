@@ -1,42 +1,49 @@
-This is the Garments Price Prediction.
+# Garments Price Prediction
 
-The folder includes 4 ipython notebook which are configured for 4 different conditions. (2-DatasetsX2-Sizes of images. )
+This repository contains code for predicting garment prices using deep learning models. The project includes four Jupyter notebooks, each configured for different conditions based on dataset type and image size.
 
-The images can be found in 2 datasets in the following link. --> https://drive.google.com/open?id=0B4wcTeTa5IeNcExhbS1iaXBGLTA
+## Dataset Information
 
+The datasets can be found at the following link:
+[Garments Dataset](https://drive.google.com/open?id=0B4wcTeTa5IeNcExhbS1iaXBGLTA)
 
-The datasets are split into 2. 
+The datasets are divided into two categories:
+1. **Data with Background**
+2. **Data Without Background**
 
-	1) Data with background
-	2) Data Without Background
+Additionally, two separate sheets, **MAHATI corpus.xlsx** and **cotton.csv**, contain the corresponding labels.
 
+## Installation & Setup
 
-Along with the images 2 seperate sheets have been attached which contain the labels corresponding to them (MAHATI corpus.xlsx and cotton.csv).
+To run the Jupyter notebooks, ensure that both the datasets and notebooks are properly aligned based on your OS paths.
 
+### Requirements:
+- Install **Jupyter Kernel** by downloading **Anaconda 2.7**
+- Install **TensorFlow-GPU** for enhanced neural network performance
+- Install **Keras** for model creation
 
-To run the ipython notebooks ensure that both the dataset and the notebooks are aligned as per the OS paths.
+## Running the System
 
-//
+The repository includes the following Jupyter notebooks:
 
-It is suggested to run the notebooks using a Jupyter Kernal, which can be installed by downloading Anaconda 2.7. 
-Along with them, we require the installation of TensorFlow-GPU which enhances the neural networks performance, which can be designed using a "Keras" Package.
+1. **final_with_back.ipynb** - Images with background, resized to **30x30**
+2. **final_with_back_50x50.ipynb** - Images with background, resized to **50x50**
+3. **final_without_back.ipynb** - Images without background, resized to **30x30**
+4. **final_without_back_50x50.ipynb** - Images without background, resized to **50x50**
 
+## Model Workflow
 
-RUNNING THE SYSTEM -
+1. Images are loaded and resized using an antialiasing approach.
+2. The images are passed through a **Keras-based** neural network.
+3. The neural network output is combined with meta-features from **MAHATI corpus.xlsx**.
+4. The combined features are fed into a **Support Vector Regression (SVR)** model.
+5. The final prediction is obtained, and accuracy is evaluated using **Mean-Square-Error-Percentage**.
 
+## Further Analysis
 
-The notebooks are ->
-	1) final_with_back.ipynb (The notebook for images with background and all images resized down to 30X30)
-	2) final_with_back 50x50.ipynb (The notebook for images with background and all images resized down to 50X50)
-	3) Final_without_back.ipynb (The notebook for images without background and all images resized down to 30X30)
-	4) Final_without_back 50x50.ipynb (The notebook for images without background and all images resized down to 50X50)
+For an in-depth analysis, refer to the **project report**.
 
-Keras allows you to modulate all the combinations for neural network. 
+---
 
-As you load the images the algorithm uses an antialiasing approach to resize the images. After that the images are sent through the model created using keras ('a'). The output from the neural network which is fed into SVR by appending along with the meta features from MAHATI corpus. The output from the regression is considered the final output. The accuracy of the predictor is tested using Mean-Square-Error-Percentage.
- 
+Thank You.
 
-FOR FURTHER ANALYSIS SEE THE REPORT. 
-
-
-Thank You. 
